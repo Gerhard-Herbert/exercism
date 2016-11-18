@@ -1,6 +1,6 @@
 ﻿#if INTERACTIVE
-#r @"..\..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll"
-#r @"..\..\packages\Unquote.3.1.2\lib\net45\Unquote.dll"
+#r @"..\..\packages\NUnit\lib\net45\nunit.framework.dll"
+#r @"..\..\packages\Unquote\lib\net45\Unquote.dll"
 #load "HelloWorld.fs"
 #endif
 module HelloWorldTest
