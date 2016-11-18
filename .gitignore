@@ -176,3 +176,5 @@ coffeescript/*/*.js.map
 # =========================
 CMakeLists.txt
 testCaseCollection.xml
+/.fake
+/.paket
