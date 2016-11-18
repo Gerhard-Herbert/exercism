@@ -12,12 +12,12 @@ open HelloWorld
 
 [<Test>]
 let ``No name`` () =
-    hello None =! "Hello, World!"
+    Assert.AreEqual(hello None, "Hello, World!")
 
 [<Test>]
 let ``Sample name`` () =
-    hello (Some "Alice") =! "Hello, Alice!"
+    Assert.AreEqual(hello (Some "Alice"), "Hello, Alice!")
 
 [<Test>]
 let ``Other sample name`` () =
-    hello (Some "Bob") =! "Hello, Bob!"
+    Assert.AreEqual(hello (Some "Bob"), "Hello, Bob!")

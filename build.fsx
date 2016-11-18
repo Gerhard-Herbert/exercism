@@ -50,5 +50,8 @@ Target "NUnitTest" (fun _ ->
   ==> "Build"
   ==> "Deploy"
 
+"Build"
+  ==> "NUnitTest"
+
 // start build
 RunTargetOrDefault "Build"
