@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Name>Exercism</Name>
@@ -30,18 +30,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="../packages/NUnit/lib/net45/nunit.framework.dll" />
-    <Reference Include="../packages/Unquote/lib/net45/Unquote.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="hello-world/HelloWorld.fs" />
-    <Compile Include="hello-world/HelloWorldTest.fs" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Choose>
     <When Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
@@ -121,4 +109,18 @@
       </ItemGroup>
     </When>
   </Choose>
+  <ItemGroup>
+    <Compile Include="hello-world/HelloWorld.fs" />
+    <Compile Include="hello-world/HelloWorldTest.fs" />
+    <Compile Include="bob\Bob.fs" />
+    <Compile Include="bob/bobTest.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="../packages/NUnit/lib/net45/nunit.framework.dll" />
+    <Reference Include="../packages/Unquote/lib/net45/Unquote.dll" />
+  </ItemGroup>
 </Project>
