@@ -1,23 +1,18 @@
 ﻿module Bob
-
 open System
 
-let checkAll (msg : string) condition = 
-    msg.ToCharArray()
-    |> Seq.fold (fun r c -> r && (condition c)) true
+let atLeastOneLetter msg = msg |> Seq.exists Char.IsLetter
 
-let isAllUppercase msg = checkAll msg (fun c -> Char.IsUpper c  || not (Char.IsLetter c))
-let noLetter msg = checkAll msg (fun c -> Char.IsLetter c |> not)
-let atLeastOneLetter msg = noLetter msg |> not
-let isYelling msg = isAllUppercase msg && atLeastOneLetter msg 
-let endsWith prefix (msg:string) = msg.EndsWith(prefix) 
-let isQuestion msg =  endsWith "?" msg
-let isEmpty msg = checkAll msg (fun c -> Char.IsWhiteSpace c)
-
+let (|Silent|Yelling|Question|Other|) msg =
+    if String.IsNullOrWhiteSpace(msg) then Silent
+    else if atLeastOneLetter msg && msg.ToUpper() = msg then Yelling
+    else if msg.EndsWith("?") then Question
+    else Other
+     
 let hey msg = 
     match msg with
-    | _ when isEmpty  msg ->  "Fine. Be that way!"
-    | _ when isYelling msg ->  "Whoa, chill out!"
-    | _ when isQuestion msg ->  "Sure."
+    | Silent  msg ->  "Fine. Be that way!"
+    | Yelling msg ->  "Whoa, chill out!"
+    | Question msg ->  "Sure."
     | _ ->  "Whatever."
 
