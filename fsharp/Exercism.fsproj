@@ -114,6 +114,8 @@
     <Compile Include="hello-world/HelloWorldTest.fs" />
     <Compile Include="bob\Bob.fs" />
     <Compile Include="bob/bobTest.fs" />
+    <Compile Include="difference-of-squares\DifferenceOfSquares.fs" />
+    <Compile Include="difference-of-squares/DifferenceOfSquaresTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
